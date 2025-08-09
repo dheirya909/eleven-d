@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XI-D Memes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="memes.html">Memes</a>
+        <a href="about.html">About Us</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1 class="glitch">XI-D Memes 😂</h1>
+    <div class="meme-grid">
+        <img src="images/meme1.jpg" alt="Meme 1" class="meme">
+        <img src="images/meme2.jpg" alt="Meme 2" class="meme">
+        <img src="images/meme3.jpg" alt="Meme 3" class="meme">
+        <img src="images/meme4.jpg" alt="Meme 3" class="meme">
+        <img src="images/meme5.jpg" alt="Meme 3" class="meme">
+        <img src="images/meme6.jpg" alt="Meme 3" class="meme">
+    </div>
+</div>
+
+<div id="lightbox">
+    <img src="" alt="Meme">
+</div>
+
+<script>
+    const memes = document.querySelectorAll('.meme');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    memes.forEach(meme => {
+        meme.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = meme.src;
+        });
+    });
+
+    lightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+</script>
+</body>
+</html>

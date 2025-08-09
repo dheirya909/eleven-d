@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class XI-D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="memes.html">Memes</a>
+        <a href="about.html">About Us</a>
+    </nav>
+</header>
+
+<!-- Floating Emojis -->
+<div id="emojis"></div>
+
+<div class="container">
+    <h1 class="glitch">Welcome to XI-D 😎</h1>
+    <p class="typewriter">The class where chaos meets genius... and somehow passes exams.</p>
+    <a href="memes.html" class="btn">See Our Memes</a>
+</div>
+
+<script>
+// Floating emojis
+const emojiList = ["📐","💻","🧪","📚","⚡","📝","😂"];
+const emojiContainer = document.getElementById("emojis");
+
+for (let i = 0; i < 15; i++) {
+    let emoji = document.createElement("div");
+    emoji.className = "floating-emoji";
+    emoji.style.left = Math.random() * 100 + "vw";
+    emoji.style.animationDuration = (5 + Math.random() * 5) + "s";
+    emoji.innerText = emojiList[Math.floor(Math.random() * emojiList.length)];
+    emojiContainer.appendChild(emoji);
+}
+</script>
+
+</body>
+</html>
