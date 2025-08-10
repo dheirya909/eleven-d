@@ -202,6 +202,106 @@
             backdrop-filter: blur(10px);
         }
 
+        /* VIP Cards Styles */
+        .vip-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; 
+            margin-top: 60px;
+        }
+
+        .vip-card {
+            background: linear-gradient(145deg, rgba(220, 38, 38, 0.05), rgba(124, 45, 18, 0.05));
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vip-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .vip-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(220, 38, 38, 0.4);
+            box-shadow: 0 20px 50px rgba(220, 38, 38, 0.1);
+        }
+
+        .vip-card:hover::before {
+            opacity: 1;
+        }
+
+        .vip-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            border: 3px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background: rgba(10, 10, 10, 0.8);
+        }
+
+        .vip-card:hover .vip-avatar {
+            border-color: var(--primary);
+            box-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
+        }
+
+        .vip-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .avatar-fallback {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--text-muted);
+        }
+
+        .vip-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .vip-nickname {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .vip-badge {
+            display: inline-block;
+            background: rgba(220, 38, 38, 0.2);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+        }
+
         .about-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: start; margin-top: 60px; }
         .about-text { font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary); }
         .about-text h3 { color: var(--text-primary); font-size: 1.5rem; font-weight: 600; margin-bottom: 20px; margin-top: 40px; }
@@ -244,6 +344,7 @@
         <ul class="nav-links">
             <li><a href="#" onclick="showSection('home')" class="nav-link active">Home</a></li>
             <li><a href="#" onclick="showSection('memes')" class="nav-link">Memes</a></li>
+            <li><a href="#" onclick="showSection('vip')" class="nav-link">VIP</a></li>
             <li><a href="#" onclick="showSection('about')" class="nav-link">About Us</a></li>
         </ul>
     </nav>
@@ -358,6 +459,97 @@
                     <div class="image-label">Everyday's story.</div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <section id="vip" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">VIP Members</h2>
+                <p class="section-subtitle">The legends, the chaos creators, the ones who make XI-D unforgettable.</p>
+            </div>
+            <div class="vip-grid">
+                <div class="vip-card">
+                    <div class="vip-avatar">
+                        <img src="/images/shlok.jpg" alt="Shlok" onerror="showAvatarFallback(this, 'fas fa-microphone-alt')">
+                    </div>
+                    <div class="vip-name">Shlok</div>
+                    <div class="vip-nickname">"The Moaner"</div>
+                    <div class="vip-badge">Sound Effects Master</div>
+                </div>
+
+                <div class="vip-card">
+                    <div class="vip-avatar">
+                        <img src="/images/zainul.jpg" alt="Zainul" onerror="showAvatarFallback(this, 'fas fa-target')">
+                    </div>
+                    <div class="vip-name">Zainul</div>
+                    <div class="vip-nickname">"The Target"</div>
+                    <div class="vip-badge">Professional Victim</div>
+                </div>
+
+                <div class="vip-card">
+                    <div class="vip-avatar">
+                        <img src="/images/agam.jpg" alt="Agam" onerror="showAvatarFallback(this, 'fas fa-comments')">
+                    </div>
+                    <div class="vip-name">Agam</div>
+                    <div class="vip-nickname">"The Yapper"</div>
+                    <div class="vip-badge">Unlimited Talk Time</div>
+                </div>
+
+                <div class="vip-card">
+                    <div class="vip-avatar">
+                        <img src="/images/sourik.jpg" alt="Sourik" onerror="showAvatarFallback(this, 'fas fa-leaf')">
+                    </div>
+                    <div class="vip-name">Sourik</div>
+                    <div class="vip-nickname">"The Zen Master"</div>
+                    <div class="vip-badge">Chill Coordinator</div>
+                </div>
+
+                <div class="vip-card">
+                    <div class="vip-avatar">
+                        <img src="/images/hammad.jpg" alt="Hammad" onerror="showAvatarFallback(this, 'fas fa-ruler-vertical')">
+                    </div>
+                    <div class="vip-name">Hammad</div>
+                    <div class="vip-nickname">"The Vertically Challenged"</div>
+                    <div class="vip-badge">Pocket-Sized Legend</div>
+                </div>
+
+                <div class="vip-card">
+                    <div class="vip-avatar">
+                        <img src="https://mike-robbins.com/wp-content/uploads/2010/03/3-17-10-blog.jpg" alt="Arhan" onerror="showAvatarFallback(this, 'fas fa-heart')">
+                    </div>
+                    <div class="vip-name">Manit</div>
+                    <div class="vip-nickname">"The Absent"</div>
+                    <div class="vip-badge">Professional Leave taker</div>
+                </div>
+
+                <div class="vip-card">
+                    <div class="vip-avatar">
+                        <img src="https://mike-robbins.com/wp-content/uploads/2010/03/3-17-10-blog.jpg" alt="Dheirya" onerror="showAvatarFallback(this, 'fas fa-theater-masks')">
+                    </div>
+                    <div class="vip-name">Dheirya</div>
+                    <div class="vip-nickname">"The Method Actor"</div>
+                    <div class="vip-badge">Full-Time Character</div>
+                </div>
+
+                <div class="vip-card">
+                    <div class="vip-avatar">
+                        <img src="/images/viplov.jpg" alt="Ankit" onerror="showAvatarFallback(this, 'fas fa-exclamation-triangle')">
+                    </div>
+                    <div class="vip-name">Viplov</div>
+                    <div class="vip-nickname">"Supervisor Specialist"</div>
+                    <div class="vip-badge">GURT</div>
+                </div>
+
+                <div class="vip-card">
+                    <div class="vip-avatar">
+                        <img src="/images/anhad.jpg" alt="Ankit" onerror="showAvatarFallback(this, 'fas fa-exclamation-triangle')">
+                    </div>
+                    <div class="vip-name">Anhad</div>
+                    <div class="vip-nickname">"Chocolate lassi"</div>
+                    <div class="vip-badge">Super Nigger</div>
+                </div>
             </div>
         </div>
     </section>
